@@ -7,7 +7,7 @@
       :title="state.activeItem.title"
       @collapseChange="changeCollapse"
     />
-    <div class="absolute top-1/2 left-8" v-show="store.hideSubMenu">
+    <div class="absolute retract left-8" v-show="store.hideSubMenu">
       <ElIcon :size="16" class="cursor-pointer p-2 box-content" @click="switchCollapse">
         <Expand />
       </ElIcon>
@@ -41,3 +41,10 @@
     });
   }
 </script>
+
+<style>
+.retract {
+  top: 55%;
+  left: 1rem;
+}
+</style>
