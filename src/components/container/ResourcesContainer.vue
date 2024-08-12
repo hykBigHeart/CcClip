@@ -44,7 +44,7 @@
 
 <style>
 .retract {
-  top: 55%;
+  top: 60%;
   left: 1rem;
 }
 </style>
