@@ -128,6 +128,8 @@ class FFManager {
     // 打印目录
     logDir(filePath: string) {
         this.showLog && console.log(this.readDir(filePath));
+        sessionStorage.clear()
+
     }
     // 读取目录
     readDir(filePath: string) {
