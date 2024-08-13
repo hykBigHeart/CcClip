@@ -10,6 +10,7 @@
       {{ store.pageTitle }}
     </h2>
     <div class="flex w-1/3 flex-row-reverse pr-10 items-center">
+      <ElButton color="#626aef" style="margin-left: 10px;" @click="JumpEvent">视频翻译</ElButton>
       <ElButton color="#626aef" disabled>
         <ElIcon :size="size" :color="color" class="mr-1">
           <Download />
@@ -32,6 +33,7 @@
 <script setup lang="ts">
   import logoImage from '@/assets/ccLogo.png';
   import { ref, computed } from 'vue';
+  import { useRouter } from 'vue-router';
   import { Download, Sunny, Moon } from '@element-plus/icons-vue';
   import { usePageState } from '@/stores/pageState';
   const store = usePageState();
@@ -42,4 +44,11 @@
     '--el-switch-border-color': store.isDark ? '#4B5563' : '#D1D5DB',
     '--el-color-white': store.isDark ? '#F3F4F6' : '#374151'
   }));
+  
+// 跳转
+  const router = useRouter();
+
+  const JumpEvent = () => {
+    router.push('/preview')
+  }
 </script>
