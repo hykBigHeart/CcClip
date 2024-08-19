@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col pt-2 pl-2 pr-1 mt-2">
-    <span class="mr-2 pl-2 mb-2 h-6 text-sm border-b dark:border-gray-600 border-gray-300 select-none"> {{ listData.title }} </span>
+    <span class="mr-2 pl-2 mb-2 h-6 text-sm   dark:border-gray-600 border-gray-300 select-none"> {{ listData.title }} </span>
     <ul class="flex flex-row flex-wrap">
       <li
         class="flex flex-col mb-2 p-1.5"

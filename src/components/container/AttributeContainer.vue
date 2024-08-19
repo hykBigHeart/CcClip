@@ -1,19 +1,39 @@
 <template>
   <div
     class="select-none relative pl-2"
-    :style="attrWidth"
-  >
-    <SplitLine
+    style="width: 450px;"
+    >
+    <!-- :style="attrWidth" -->
+    <!-- <SplitLine
       class="top-0 left-0 bottom-0"
       direction="vertical"
       :limitSize="limitSize"
       disabled
       v-model:newWidth="pageStore.attrWidth"
-    />
-    <div v-show="selectTrackOptionsConfig.length === 0" class="w-full h-full flex flex-col justify-center items-center">
+    /> -->
+    <span class="pl-2 inline-block w-full h-10 mb-2 leading-10   dark:border-gray-600 border-gray-300" style="background-color: #2A292E; font-size: 12px; color: #C3C2C7;">
+      <p>草稿参数</p>
+    </span>
+
+    <div class="parameter">
+      <el-descriptions
+        title=""
+        :column="1"
+        :size="size"
+      >
+        <el-descriptions-item label="草稿名称：">7月30号</el-descriptions-item>
+        <el-descriptions-item label="保存位置：">C:\Windows\System32\cmd.exe</el-descriptions-item>
+        <el-descriptions-item label="比例：" :span="2">适应</el-descriptions-item>
+        <el-descriptions-item label="分辨率：">适应</el-descriptions-item>
+        <el-descriptions-item label="草稿帧率：">30.00帧/秒</el-descriptions-item>
+        <el-descriptions-item label="导入管道：">保留在原有位置</el-descriptions-item>
+      </el-descriptions>
+    </div>
+
+    <!-- <div v-show="selectTrackOptionsConfig.length === 0" class="w-full h-full flex flex-col justify-center items-center">
       <AttrEmptyIcon />
       <span class="text-sm">点击轨道进行编辑</span>
-    </div>
+    </div> -->
     <div v-if="selectTrackOptionsConfig.length > 0" class="absolute top-0 left-3 right-2 bottom-0 overflow-hidden">
       <AttrContainer :attrData="selectTrackOptionsConfig" :trackId="trackStore.selectResource?.id" />
     </div>
@@ -26,6 +46,20 @@
   import SplitLine from '@/components/SplitLine.vue';
   import { usePageState } from '@/stores/pageState';
   import { computed, reactive, ref } from 'vue';
+  import type { ComponentSize } from 'element-plus'
+
+const size = ref<ComponentSize>('default')
+  const blockMargin = computed(() => {
+  const marginMap = {
+    large: '32px',
+    default: '28px',
+    small: '24px',
+  }
+  return {
+    marginTop: marginMap[size.value] || marginMap.default,
+  }
+})
+
   const pageStore = usePageState();
   const trackStore = useTrackState();
 
@@ -49,3 +83,16 @@
     maxWidth: 600
   });
 </script>
+
+<style>
+.parameter {
+  min-height: 300px;
+}
+  .el-descriptions__body {
+    background-color: #1B1B1B;
+    
+  }
+  .el-descriptions__body .el-descriptions__table:not(.is-bordered) .el-descriptions__cell {
+      font-size: 12px;
+    }
+</style>

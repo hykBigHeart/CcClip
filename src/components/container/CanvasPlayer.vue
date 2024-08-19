@@ -1,6 +1,8 @@
 <template>
   <div class="flex-1 overflow-hidden relative" ref="playerContent" @click="cancelSelect">
-    <span class="pl-2 inline-block w-full h-10 mb-2 leading-10 border-b dark:border-gray-600 border-gray-300">播放器</span>
+    <span class="pl-2 inline-block w-full h-10 mb-2 leading-10   dark:border-gray-600 border-gray-300" style="background-color: #2A292E; font-size: 12px; color: #C3C2C7;">
+      <p>预览</p>
+    </span>
     <Player :containerSize="containerSize" />
   </div>
 </template>

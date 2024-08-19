@@ -1,9 +1,10 @@
 <template>
-  <ul class="w-16 flex flex-col">
+  <ul class="w-16 flex flex-col" style="background-color: #2A292E;">
     <li
+      style="background-color: #2A292E;"
       v-for="(item, index) of showMenuData" :key="item.key"
       class="w-full flex flex-col items-center pt-2 pb-2 hover:border-indigo-400 hover:dark:bg-gray-700 hover:bg-gray-200 focus:outline-none"
-      :class="item.active ? 'border-b-2 dark:bg-gray-700 bg-gray-100 border-indigo-400' : 'border-b dark:bg-gray-800 bg-gray-50 dark:border-gray-600 border-gray-200'"
+      :class="item.active ? ' -2 dark:bg-gray-700 bg-gray-100 border-indigo-400' : '  dark:bg-gray-800 bg-gray-50 dark:border-gray-600 border-gray-200'"
       @click="activeChangeHandler(index)"
     >
       <ElIcon

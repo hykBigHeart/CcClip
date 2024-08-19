@@ -1,5 +1,5 @@
 <template>
-  <header class="h-12 w-full flex flex-nowrap flex-row items-center justify-center border-b dark:border-gray-600 border-gray-300" style="background-color: #000000;">
+  <header class="h-12 w-full flex flex-nowrap flex-row items-center justify-center   dark:border-gray-600 border-gray-300" style="background-color: #000000;">
     <div v-if="false" style="width: 100%; height: 100%;">
       <div class="flex w-1/3 pl-2 items-center">
       <div class="w20">
@@ -12,12 +12,13 @@
     </h2>
     </div>
     <div class="custom-header">
-      <ElButton color="#626aef" style="margin-left: 10px;" @click="JumpEvent">视频翻译</ElButton>
-      <ElButton color="#626aef" disabled>
-        <ElIcon :size="size" :color="color" class="mr-1">
+      <ElButton color="#3496FE" style="margin-left: 10px;" @click="JumpEvent"><span style="color: white;">视频翻译</span></ElButton>
+      <ElButton color="#3496FE">
+        <!-- <ElIcon :size="size" :color="color" class="mr-1">
           <Download />
-        </ElIcon>
-        导出
+        </ElIcon> -->
+        <img style="width: 20px;" src="/public/image/icons/daochu.png" alt="">
+        <span style="color: white;">导出</span>
       </ElButton>
       <el-switch
       v-if="false"

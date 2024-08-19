@@ -6,14 +6,9 @@ interface MenuItem {
 }
 const menuData: MenuItem[] = [
   {
-    title: '视频',
+    title: '素材库',
     key: 'video',
     icon: 'VideoIcon'
-  },
-  {
-    title: '音频',
-    key: 'audio',
-    icon: 'AudioIcon'
   },
   {
     title: '文本',
@@ -21,25 +16,31 @@ const menuData: MenuItem[] = [
     icon: 'TextIcon'
   },
   {
-    title: '图片',
-    key: 'image',
-    icon: 'ImageIcon'
+    title: '音乐',
+    key: 'audio',
+    icon: 'AudioIcon'
   },
+  
   {
-    title: '特效',
+    title: '配音',
     key: 'effect',
     icon: 'EffectsIcon'
   },
   {
-    title: '过渡',
+    title: '视频',
     key: 'transition',
     icon: 'TransitionIcon'
   },
   {
-    title: '滤镜',
-    key: 'filter',
-    icon: 'FilterIcon'
-  }
+    title: '图片',
+    key: 'image',
+    icon: 'ImageIcon'
+  },
+  // {
+  //   title: '滤镜',
+  //   key: 'filter',
+  //   icon: 'FilterIcon'
+  // }
 ];
 
 export { menuData };

@@ -1,10 +1,31 @@
 <template>
+    <!-- class="flex flex-col transition-all duration-200 overflow-x-hidden border-r dark:border-gray-600 border-gray-300" -->
   <div
-    class="flex flex-col transition-all duration-200 overflow-x-hidden border-r dark:border-gray-600 border-gray-300"
-    :class="collapse ? 'w-0' : 'w-80'"
+    :class="collapse ? 'w-0' : 'w-500'"
   >
-    <div class="min-h-full w-80 flex flex-col overflow-hidden border-l dark:border-gray-600 border-gray-300">
-      <div class="h-10 border-b dark:border-gray-600 border-gray-300">
+    <div class="container">
+      <div class="left">
+        <el-tree
+          style="max-width: 600px"
+          node-key="id"
+          :data="data"
+          :props="defaultProps"
+          :default-expanded-keys="[1]"
+          @node-click="handleNodeClick"
+        />
+      </div>
+      <div class="right">
+        <div class="upload-box">
+          <h1>导入</h1>
+          <p>视频、音讯、图片</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div v-if="false" class="min-h-full w-80 flex flex-col overflow-hidden border-l dark:border-gray-600 border-gray-300">
+      <div class="h-10   dark:border-gray-600 border-gray-300">
         <span class="inline leading-10 pl-3 select-none">{{ title }}</span>
         <ElIcon :size="16" class="mr-3 mt-1 float-right cursor-pointer p-2 box-content" @click="switchCollapse">
           <Fold />
@@ -25,6 +46,7 @@
   import SubList from '@/components/SubList.vue';
   import { getData } from '@/api/mock';
   import { useRequest } from 'vue-hooks-plus';
+import { Tree } from 'element-plus/es/components/tree-v2/src/types';
   const props = defineProps({
     activeKey: {
       type: String,
@@ -39,6 +61,67 @@
       default: false
     }
   });
+
+
+  const data: Tree[] = [
+    {
+      label: '片头素材',
+      id: 1,  
+      children: [
+        {
+          label: '默认素材库',
+          id: 11,  
+        },
+        {
+          label: '自定义导入',
+          id: 12,  
+        },
+      ],
+    },
+    {
+      label: '云素材',
+      id: 2,  
+
+      children: [
+        {
+          label: '默认素材库',
+      id: 21,  
+
+        },
+        {
+          label: '自定义导入',
+      id: 22,  
+
+        },
+      ],
+    },
+    {
+      label: '素材库',
+      id: 3,  
+
+      children: [
+        {
+          label: '默认素材库',
+      id: 31,  
+
+        },
+        {
+          label: '自定义导入',
+      id: 32,  
+
+        },
+      ],
+    },
+  ]
+  const defaultProps = {
+    children: 'children',
+    label: 'label',
+  }
+
+  const handleNodeClick = (data: Tree) => {
+    console.log(data)
+  }
+
   const emit = defineEmits({
     collapseChange(newCollapse: boolean) {
       return newCollapse !== null;
@@ -61,3 +144,58 @@
     collapse.value = newValue;
   });
 </script>
+
+<style>
+.container {
+  display: flex;
+  height: 100%;
+
+}
+
+.w-500 {
+  width: 450px;
+  height: 100%;
+
+}
+
+.left {
+  background-color: #252527;
+  height: 100%;
+  min-width: 120px;
+  .el-tree {
+    font-size: 12px;
+    background-color: #252527;
+    color: #CFCFD3
+  }
+  .el-tree-node__content:hover, .el-tree-node:focus>.el-tree-node__content {
+    background-color: #252527;
+    color: #3C95F5;
+  }
+}
+
+.right {
+  position: relative;
+  width: 100%;
+  .upload-box {
+    cursor: pointer;
+    text-align: center;
+    border: 1px dashed #393939;
+    padding: 30px 0;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    h1 {
+      font-size: 13px;
+    }
+    p {
+      font-size: 10px;
+      color: #535353;
+    }
+  }
+}
+</style>
