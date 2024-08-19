@@ -1,6 +1,7 @@
 <template>
-  <header class="h-12 w-full flex flex-nowrap flex-row items-center justify-center border-b dark:border-gray-600 border-gray-300">
-    <div class="flex w-1/3 pl-2 items-center">
+  <header class="h-12 w-full flex flex-nowrap flex-row items-center justify-center border-b dark:border-gray-600 border-gray-300" style="background-color: #000000;">
+    <div v-if="false" style="width: 100%; height: 100%;">
+      <div class="flex w-1/3 pl-2 items-center">
       <div class="w20">
         <img class="h-8" :src="logoImage" alt="">
       </div>
@@ -9,7 +10,8 @@
     <h2 class="align-middle w-1/5 text-center flex-1 select-none text-sm">
       {{ store.pageTitle }}
     </h2>
-    <div class="flex w-1/3 flex-row-reverse pr-10 items-center">
+    </div>
+    <div class="custom-header">
       <ElButton color="#626aef" style="margin-left: 10px;" @click="JumpEvent">视频翻译</ElButton>
       <ElButton color="#626aef" disabled>
         <ElIcon :size="size" :color="color" class="mr-1">
@@ -18,6 +20,7 @@
         导出
       </ElButton>
       <el-switch
+      v-if="false"
         class="mr-10"
         size="large"
         :active-icon="Moon"
@@ -52,3 +55,11 @@
     router.push('/preview')
   }
 </script>
+
+<style>
+  .custom-header {
+    position: absolute;
+    right: 10px;
+    background: #000000;
+  }
+</style>
