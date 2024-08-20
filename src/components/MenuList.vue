@@ -15,7 +15,7 @@
       </ElIcon>
       <span
         class="mt-0.5 select-none"
-        :class="item.active ? 'text-sm dark:text-gray-50 text-gray-800' : 'text-xs dark:text-gray-300 text-gray-500'"
+        :class="item.active ? 'text-sm dark:text-gray-50 text-gray-800 active-color' : 'text-xs dark:text-gray-300 text-gray-500'"
       >{{ item.title }}</span>
     </li>
   </ul>
@@ -63,3 +63,9 @@
     emit('activeChange', menuData[activeIndex.value]);
   }
 </script>
+
+<style>
+.active-color {
+  color: #3C95F5 !important;
+}
+</style>

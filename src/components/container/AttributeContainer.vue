@@ -28,6 +28,10 @@
         <el-descriptions-item label="草稿帧率：">30.00帧/秒</el-descriptions-item>
         <el-descriptions-item label="导入管道：">保留在原有位置</el-descriptions-item>
       </el-descriptions>
+
+      <span class="pl-2 inline-block w-full h-10 mb-2 leading-10 dark:border-gray-600 border-gray-300 right-bottom" style="background-color: #2A292E; font-size: 12px; color: #C3C2C7;">
+        <p class="edit-btn">修改</p>
+      </span>
     </div>
 
     <!-- <div v-show="selectTrackOptionsConfig.length === 0" class="w-full h-full flex flex-col justify-center items-center">
@@ -94,5 +98,19 @@ const size = ref<ComponentSize>('default')
   }
   .el-descriptions__body .el-descriptions__table:not(.is-bordered) .el-descriptions__cell {
       font-size: 12px;
+    }
+
+    .right-bottom {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+    }
+    .edit-btn {
+      display: inline;
+      background-color: #4F5056;
+      padding: 3px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-left: 80%;
     }
 </style>
