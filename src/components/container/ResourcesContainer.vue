@@ -20,16 +20,26 @@
   import { Expand } from '@element-plus/icons-vue';
   import MenuList from '@/components/MenuList.vue';
   import ItemList from '@/components/ItemList.vue';
-  import { menuData } from '@/data/baseMenu';
+  import { menuData, MenuItem } from '@/data/baseMenu';
   import { ref, reactive, nextTick } from 'vue';
   import { usePageState } from '@/stores/pageState';
+
+  const emit = defineEmits({
+    // 校验事件
+    activeChange(activeItem: MenuItem) {
+      return activeItem.title && activeItem.key;
+    }
+  });
+
   const store = usePageState();
   const defaultActiveIndex = ref(0);
   let state = reactive({
     activeItem: menuData[defaultActiveIndex.value]
   });
   function activeHandler(activeItem: any) {
-    state.activeItem = reactive(activeItem);
+    // state.activeItem = reactive(activeItem);
+      emit('activeChange', activeItem);
+    
   }
   function switchCollapse() {
     nextTick(() => {

@@ -3,7 +3,7 @@
   <div
     :class="collapse ? 'w-0' : 'w-500'"
   >
-    <div class="container">
+    <div v-if="false" class="container">
       <div class="left">
         <el-tree
           style="max-width: 600px"
@@ -24,7 +24,7 @@
 
 
 
-    <div v-if="false" class="min-h-full w-80 flex flex-col overflow-hidden border-l dark:border-gray-600 border-gray-300">
+    <div v-if="true" class="min-h-full w-80 flex flex-col overflow-hidden border-l dark:border-gray-600 border-gray-300">
       <div class="h-10   dark:border-gray-600 border-gray-300">
         <span class="inline leading-10 pl-3 select-none">{{ title }}</span>
         <ElIcon :size="16" class="mr-3 mt-1 float-right cursor-pointer p-2 box-content" @click="switchCollapse">

@@ -1,0 +1,52 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "title": "抖音",
+      "type": "audio",
+      "items": [
+        {
+          "cover": "/image/audio/audio_0.png",
+          "time": 25000,
+          "format": "mp3",
+          "name": "测试音频1",
+          "source": "/audio/audio_0.mp3"
+        },
+        {
+          "cover": "/image/audio/audio_1.png",
+          "time": 16000,
+          "format": "mp3",
+          "name": "测试音频2",
+          "source": "/audio/audio_1.mp3"
+        },
+        {
+          "cover": "/image/audio/audio_2.png",
+          "time": 41000,
+          "format": "mp3",
+          "name": "测试音频3",
+          "source": "/audio/audio_2.mp3"
+        }
+      ]
+    },
+    {
+      "title": "卡点",
+      "type": "audio",
+      "items": [
+        {
+          "cover": "/image/audio/audio_3.png",
+          "time": 14000,
+          "format": "mp3",
+          "name": "测试音频4",
+          "source": "/audio/audio_3.mp3"
+        },
+        {
+          "cover": "/image/audio/audio_4.png",
+          "time": 25000,
+          "format": "mp3",
+          "name": "测试音频5",
+          "source": "/audio/audio_4.mp3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 <template>
   <HeaderContainer />
   <div class="flex flex-1 overflow-hidden">
-    <ResourcesContainer />
+    <ResourcesContainer @activeChange="activeHandler" />
     <div class="flex flex-1 flex-col overflow-hidden">
       <div class="flex flex-1 flex-row flex-nowrapf">
         <ItemList
@@ -37,6 +37,11 @@
   let state = reactive({
     activeItem: menuData[defaultActiveIndex.value]
   });
+
+  function activeHandler(activeItem: any) {
+    state.activeItem = reactive(activeItem);
+  }
+
   function changeCollapse(newCollpase: boolean) {
     nextTick(() => {
       store.hideSubMenu = newCollpase;
