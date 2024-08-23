@@ -5,6 +5,7 @@
     @dragstart="dragStart"
   >
     <img
+      style="width: 4rem; height: 4rem;"
       referrerpolicy="no-referrer"
       class=" cursor-pointer w-full h-24 block select-none dark:hover:border-cyan-800 hover:border-cyan-200 box-border"
       :class="type === 'video' ? 'w-34 border-2 dark:border-gray-800 border-gray-50' : 'w-22 border dark:border-gray-700 border-gray-200'"

@@ -3,18 +3,18 @@
   <div
     :class="collapse ? 'w-0' : 'w-500'"
   >
-    <div v-if="false" class="container">
+    <div class="container">
       <div class="left">
         <el-tree
           style="max-width: 600px"
           node-key="id"
-          :data="data"
+          :data="treeData"
           :props="defaultProps"
-          :default-expanded-keys="[1]"
+          :default-expanded-keys="defaultExpandedKeys"
           @node-click="handleNodeClick"
         />
       </div>
-      <div class="right">
+      <div v-if="title == '素材库'" class="right">
         <div class="upload-box">
           <h1>导入</h1>
           <p>视频、音讯、图片</p>
@@ -24,13 +24,13 @@
 
 
 
-    <div v-if="true" class="min-h-full w-80 flex flex-col overflow-hidden border-l dark:border-gray-600 border-gray-300">
-      <div class="h-10   dark:border-gray-600 border-gray-300">
+    <div v-if="title != '素材库'" class="min-h-full w-80 flex flex-col overflow-hidden dark:border-gray-600 border-gray-300">
+      <!-- <div class="h-10   dark:border-gray-600 border-gray-300">
         <span class="inline leading-10 pl-3 select-none">{{ title }}</span>
         <ElIcon :size="16" class="mr-3 mt-1 float-right cursor-pointer p-2 box-content" @click="switchCollapse">
           <Fold />
         </ElIcon>
-      </div>
+      </div> -->
       <div class="overflow-auto flex-1 pb-10">
         <template v-for="(subData, index) of listData" :key="`${index}-${subData.type}`">
           <SubList :type="subData.type" :listData="subData" />
@@ -62,8 +62,8 @@ import { Tree } from 'element-plus/es/components/tree-v2/src/types';
     }
   });
 
-
-  const data: Tree[] = [
+const defaultExpandedKeys = ref([1])
+  let treeData: Tree[] = [
     {
       label: '片头素材',
       id: 1,  
@@ -113,6 +113,109 @@ import { Tree } from 'element-plus/es/components/tree-v2/src/types';
       ],
     },
   ]
+  watch(()=> props.title, newVal => {
+    console.log('newVal', newVal);
+    if (newVal === '素材库') {
+      treeData = [
+        {
+          label: '片头素材',
+          id: 1,  
+          children: [
+            {
+              label: '默认素材库',
+              id: 11,  
+            },
+            {
+              label: '自定义导入',
+              id: 12,  
+            },
+          ],
+        },
+        {
+          label: '云素材',
+          id: 2,  
+
+          children: [
+            {
+              label: '默认素材库',
+          id: 21,  
+
+            },
+            {
+              label: '自定义导入',
+          id: 22,  
+
+            },
+          ],
+        },
+        {
+          label: '素材库',
+          id: 3,  
+
+          children: [
+            {
+              label: '默认素材库',
+          id: 31,  
+
+            },
+            {
+              label: '自定义导入',
+          id: 32,  
+
+            },
+          ],
+        },
+      ]
+      defaultExpandedKeys.value = [1]
+    }
+    else if (newVal === '文本') {
+      treeData = [
+        {
+          label: '新建文本',
+          id: 21,  
+          children: [
+            {
+              label: '默认素材库',
+              id: 211,  
+            }
+          ],
+        },
+        {
+          label: '花字',
+          id: 21,  
+          children: [
+            {
+              label: '默认素材库',
+              id: 211,  
+            }
+          ],
+        },
+        {
+          label: '文字模板',
+          id: 21,  
+          children: [
+            {
+              label: '默认素材库',
+              id: 211,  
+            }
+          ],
+        },
+        {
+          label: '本地字幕',
+          id: 21,  
+          children: [
+            {
+              label: '默认素材库',
+              id: 211,  
+            }
+          ],
+        },
+      ]
+      defaultExpandedKeys.value = []
+    }
+  });
+
+
   const defaultProps = {
     children: 'children',
     label: 'label',
@@ -149,13 +252,13 @@ import { Tree } from 'element-plus/es/components/tree-v2/src/types';
 .container {
   display: flex;
   height: 100%;
-
+  flex: .8;
 }
 
 .w-500 {
   width: 450px;
   height: 100%;
-
+  display: flex;
 }
 
 .left {
