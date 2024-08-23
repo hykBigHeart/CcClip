@@ -1,0 +1,98 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "title": "热门",
+      "type": "image",
+      "items": [
+        {
+          "name": "贴图1",
+          "cover": "/image/image/image_0.png",
+          "source": "/image/image/image_0.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 8
+        },
+        {
+          "name": "贴图2",
+          "cover": "/image/image/image_0.png",
+          "source": "/image/image/image_0.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 8
+        },
+        {
+          "name": "贴图3",
+          "cover": "/image/image/image_0.png",
+          "source": "/image/image/image_0.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 8
+        },
+        {
+          "name": "贴图4",
+          "cover": "/image/image/image_0.png",
+          "source": "/image/image/image_0.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 8
+        },
+        {
+          "name": "贴图5",
+          "cover": "/image/image/image_0.png",
+          "source": "/image/image/image_0.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 8
+        }
+      ]
+    },
+    {
+      "title": "经典",
+      "type": "image",
+      "items": [
+        {
+          "name": "贴图6",
+          "cover": "/image/image/image_1.png",
+          "source": "/image/image/image_1.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 6
+        },
+        {
+          "name": "贴图7",
+          "cover": "/image/image/image_1.png",
+          "source": "/image/image/image_1.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 6
+        },
+        {
+          "name": "贴图8",
+          "cover": "/image/image/image_1.png",
+          "source": "/image/image/image_1.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 6
+        },
+        {
+          "name": "贴图9",
+          "cover": "/image/image/image_1.png",
+          "source": "/image/image/image_1.gif",
+          "format": "gif",
+          "width": 199,
+          "height": 200,
+          "sourceFrame": 6
+        }
+      ]
+    }
+  ]
+}
